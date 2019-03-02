@@ -1,0 +1,274 @@
+/* start Variables */
+.container .wellcome, .container .account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .account form div:first-of-type::before, .container .account form div:nth-of-type(2)::before, .container .account form div:last-of-type::before {
+  font-family: 'FontAwesome';
+  color: #757171 !important;
+  top: 27px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.container .wellcome a, .container .account form a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 60px;
+  border-radius: 50px;
+  outline: none;
+}
+
+.container .wellcome::before, .container .wellcome::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(88, 175, 155, 0.2);
+}
+
+.container .wellcome a, .container .wellcome a:hover, .container .account form a, .container .account form a:hover {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.h1 {
+  font-size: 32px;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .h1 {
+    font-size: 25px;
+  }
+}
+
+/* end Variables */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: tahoma;
+  z-index: 2;
+}
+
+body {
+  background-color: #dddddd;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+  margin-top: 50px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 55%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 30px;
+  }
+}
+
+.container .wellcome {
+  position: relative;
+  overflow: hidden;
+  width: 40%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 50px 15px;
+  background: -webkit-gradient(linear, right top, left bottom, from(#58AF9B), color-stop(rgba(20, 134, 80, 0.89)), to(rgba(11, 115, 79, 0.9)));
+  background: linear-gradient(to bottom left, #58AF9B, rgba(20, 134, 80, 0.89), rgba(11, 115, 79, 0.9));
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#58af9b), color-stop(rgba(20, 134, 80, 0.89)), to(rgba(11, 115, 79, 0.9)));
+  background-image: linear-gradient(to left bottom, #58af9b, rgba(20, 134, 80, 0.89), rgba(11, 115, 79, 0.9));
+}
+
+@media (max-width: 767px) {
+  .container .wellcome {
+    width: auto;
+    padding: 50px 30px;
+    border-radius: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+
+.container .wellcome::before {
+  top: -60px;
+  right: -90px;
+  border-radius: 30% 41% 55% 50%;
+}
+
+.container .wellcome::after {
+  bottom: -60px;
+  left: -30%;
+  border-radius: 70%;
+}
+
+.container .wellcome h1 {
+  color: #fff !important;
+}
+
+.container .wellcome p {
+  color: #AAC3BE;
+  text-align: center;
+  line-height: 23px;
+  margin-bottom: 20px;
+}
+
+.container .wellcome a {
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+@media (max-width: 767px) {
+  .container .wellcome a {
+    white-space: nowrap;
+  }
+}
+
+.container .wellcome a:hover {
+  color: #177f59 !important;
+  background-color: #fff !important;
+}
+
+.container .account {
+  width: 60%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #fff !important;
+  padding: 50px;
+}
+
+@media (max-width: 767px) {
+  .container .account {
+    width: auto;
+    padding: 30px;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+.container .account h2 {
+  color: #177f59;
+  margin-bottom: 0;
+}
+
+.container .account ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.container .account ul li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  color: #000;
+}
+
+.container .account p {
+  color: #AAC3BE;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.container .account form {
+  width: 100%;
+}
+
+.container .account form div input {
+  color: #757171 !important;
+  font-weight: bold;
+  background-color: #eee;
+  width: 100%;
+  border: none;
+  height: 40px;
+  padding: 0 35px;
+}
+
+.container .account form div:first-of-type::before {
+  content: "\f007";
+}
+
+.container .account form div:nth-of-type(2)::before {
+  content: "\f0e0";
+}
+
+.container .account form div:last-of-type::before {
+  content: "\f023";
+}
+
+.container .account form a {
+  color: #fff !important;
+  border: 1px solid #0B734F;
+  background-color: #0b734f;
+  display: block;
+  text-align: center;
+  width: 55%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+@media (max-width: 767px) {
+  .container .account form a {
+    width: auto;
+  }
+}
+
+.container .account form a:hover {
+  color: #0B734F !important;
+  background-color: #fff !important;
+}
+/*# sourceMappingURL=main.css.map */

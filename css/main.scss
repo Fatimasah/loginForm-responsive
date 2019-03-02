@@ -1,0 +1,231 @@
+/* start Variables */
+$mobile: "(max-width: 767px)";
+$minSmall: "(min-width: 768px)";
+$maxSmall: "(max-width: 991px)";
+$small: "(min-width: 768px) and (max-width: 991px)";
+$medium: "(min-width: 992px) and (max-width: 1199px)";
+$minLarge: "(min-width: 1200px)";
+$firstColor: #fff !important;
+$grayColor: #757171 !important;
+
+%flexProperty {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: center;
+}
+%input-icon {
+    font-family: 'FontAwesome';
+    color: $grayColor;
+    top: 27px;
+    margin-left: 15px;
+    position: relative;
+}
+%sign-link{
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 60px;
+    border-radius: 50px;
+    outline: none;
+}
+%wellcome-overlay {
+    content: '';
+    position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(88, 175, 155, 0.2);
+}
+%trans {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.h1{
+    font-size: 32px;
+    white-space: nowrap;
+    @media #{$mobile} {
+        font-size: 25px;
+    }
+}
+/* end Variables */
+
+*{
+    box-sizing: border-box;
+    font-family: tahoma;
+    z-index: 2;
+}
+
+body{
+    background-color: #dddddd;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 50px;
+    @media #{$minLarge} {
+        width: 55%;
+    }
+    @media #{$medium} {
+        width: 75%;
+    }
+    @media #{$small} {
+        width: 85%;
+    }
+    @media #{$mobile} {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 30px;
+    }
+    .wellcome{
+        position: relative;
+        overflow: hidden;
+        width: 40%;
+        @extend %flexProperty;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 50px 15px;
+        background: linear-gradient(to bottom left, #58AF9B, rgba(20, 134, 80, 0.89), rgba(11, 115, 79, 0.9));
+        background-image: linear-gradient(to left bottom, rgb(88, 175, 155), rgba(20, 134, 80, 0.89), rgba(11, 115, 79, 0.9));
+        @media #{$mobile} {
+            width: auto;
+            padding: 50px 30px;
+            border-radius: 0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        &::before {
+            @extend %wellcome-overlay;
+            top: -60px;
+            right: -90px;
+            border-radius: 30% 41% 55% 50%;
+        } 
+        &::after{
+            @extend %wellcome-overlay;
+            bottom: -60px;
+            left: -30%;
+            border-radius: 70%;
+        }
+        h1{
+            color: $firstColor;
+        }
+        p{
+            color: #AAC3BE;
+            text-align: center;
+            line-height: 23px;
+            margin-bottom: 20px;
+        }
+        a{
+            @extend %sign-link;
+            color: $firstColor;
+            border: 1px solid $firstColor;
+            @extend %trans;
+            @media #{$mobile} {
+                white-space: nowrap;
+            }
+            &:hover{
+                color: #177f59 !important;
+                background-color: $firstColor;
+                @extend %trans;
+            }
+        }
+    }
+    .account{
+        width:60%;
+        @extend %flexProperty;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-color: $firstColor;
+        padding: 50px;
+        @media #{$mobile} {
+            width: auto;
+            padding: 30px;
+            border-radius: 0;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        h2{
+            color: #177f59;
+            margin-bottom: 0;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            li {
+                padding: 10px;
+                border: 1px solid #ddd;
+                margin: 10px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                text-align: center;
+                color: #000;
+            }
+        }
+        p{
+            color: #AAC3BE;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+        form{
+            width: 100%;
+            div{
+                input {
+                    color: $grayColor;
+                    font-weight: bold;
+                    background-color: #eee;
+                    width: 100%;
+                    border: none;
+                    height: 40px;
+                    padding: 0 35px;
+                }
+                &:first-of-type{
+                    &::before{
+                        @extend %input-icon;
+                        content: "\f007";
+                    }
+                }
+                &:nth-of-type(2){
+                    &::before{
+                        @extend %input-icon;
+                        content: "\f0e0";
+                    }
+                }
+                &:last-of-type{
+                    &::before{
+                        @extend %input-icon;
+                        content: "\f023";
+                    }
+                }
+            }
+            a{
+                @extend %sign-link;
+                color: $firstColor;
+                border: 1px solid #0B734F;
+                background-color: #0b734f;
+                display: block;
+                text-align: center;
+                width: 55%;
+                margin: auto;
+                margin-top: 20px;
+                padding: 10px 0;
+                @extend %trans;
+                @media #{$mobile} {
+                    width: auto;
+                }
+                &:hover{
+                color: #0B734F !important;
+                background-color: $firstColor;
+                @extend %trans;
+                }
+            }
+            
+        }
+    }
+}
